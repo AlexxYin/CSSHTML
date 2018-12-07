@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FLEX布局</title>
+	<style>
+		.container{
+			display: flex;/* 将container块设置为一个Flex容器,那么container下属的center、left和right这三个子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目” */
+			min-height: 130px;
+		}
+		.center{
+			flex-grow: 1;/* 通过项目属性flex-grow设置main的放大比例，将空余的空间用main来填充，使三个项目布满一整行；默认为0，也就是对剩余空间不做处理。 */
+			background-color: blue;
+		}
+		.left{
+			order: -1;/* 通过order属性设置排列顺序，定义项目的排列顺序，越小越靠前，默认为0 */
+			flex-basis: 200px;/* 项目属性flex-basis 设置left和right的固定宽度 */
+			background-color: red;
+		}
+		.right{
+			flex-basis: 300px;/* 项目属性flex-basis 设置left和right的固定宽度 */
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="center">center</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+</body>
+</html>

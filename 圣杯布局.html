@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圣杯布局</title>
+	<style>
+		.main,.left,.right{
+			min-height: 150px;
+			float: left;
+			position: relative;   /* 相对定位left和right分别移动到这两个留白 */
+		}
+		.container{
+			padding: 0 300px 0 200px;    /* 左右留白 */
+		}
+		.main{
+			background-color: green;
+			width: 100%;
+		}
+		.left{
+			background-color: red;
+			width: 200px;
+			margin-left: -100%;    /* 设置left部分的margin-left为-100%,就会使left向左移动一整个行的宽度，由于left左边是父元素的边框，所以left继续跳到上一行左移，一直移动到上一行的开头，并覆盖了main部分 */
+			left: -200px;   /* 相对定位left和right分别移动到这两个留白 */
+		}
+		.right{
+			background-color: blue;
+		    width: 300px;
+		    margin-left: -300px;  /* 设置right部分margin-left为负的宽度，right就会左移到上一行的末尾 */
+		    right: -300px;    /* 相对定位left和right分别移动到这两个留白 */
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="main">main</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+</body>
+</html>

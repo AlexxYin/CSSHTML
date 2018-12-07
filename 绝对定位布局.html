@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绝对定位布局</title>
+	<style>
+		.container{
+			position: relative;
+		}
+		.center,.left,.right{
+			top: 0;
+			height: 130px;
+		}
+		.center{
+			background-color: blue;
+			margin:0 300px 0 200px;
+		}
+		.left{
+			position: absolute;
+			background-color: red;
+			left:0;
+			width: 200px;
+		}
+		.right{
+			position: absolute;
+			background-color: green;
+			right: 0;
+			width: 300px;
+		}
+		/* 绝对定位使元素的位置与文档流无关，因此不占据空间。这一点与相对定位不同，相对定位实际上被看作普通流定位模型的一部分，因为元素的位置相对于它在普通流中的位置。 
+		　　 因为绝对定位的框与文档流无关，所以它们可以覆盖页面上的其它元素。可以通过设置 z-index 属性来控制这些框的堆放次序。
+		 */
+</head>
+<body>
+	<div class="container">
+		<div class="center">center</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+</body>
+</html>
